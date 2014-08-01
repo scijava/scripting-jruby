@@ -43,7 +43,7 @@ import org.scijava.script.ScriptLanguage;
  * @author Johannes Schindelin
  * @see ScriptEngine
  */
-@Plugin(type = ScriptLanguage.class)
+@Plugin(type = ScriptLanguage.class, name = "Ruby")
 public class JRubyScriptLanguage extends AdaptedScriptLanguage {
 
 	public JRubyScriptLanguage() {
