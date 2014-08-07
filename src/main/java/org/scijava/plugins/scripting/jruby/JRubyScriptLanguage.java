@@ -51,12 +51,6 @@ public class JRubyScriptLanguage extends AdaptedScriptLanguage {
 	}
 
 	@Override
-	public String getLanguageName() {
-		// NB: Must override, or else the name is "ruby" in small case.
-		return "Ruby";
-	}
-
-	@Override
 	public ScriptEngine getScriptEngine() {
 		// TODO: Consider adapting the wrapped ScriptEngineFactory's ScriptEngine.
 		return new JRubyScriptEngine();
