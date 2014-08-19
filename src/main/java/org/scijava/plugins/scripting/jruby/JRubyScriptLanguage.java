@@ -40,7 +40,7 @@ import org.scijava.script.ScriptLanguage;
 /**
  * An adapter of the JRuby interpreter to the SciJava scripting interface.
  * 
- * @author Johannes Schindelin
+ * @author Curtis Rueden
  * @see ScriptEngine
  */
 @Plugin(type = ScriptLanguage.class, name = "Ruby")
@@ -48,12 +48,6 @@ public class JRubyScriptLanguage extends AdaptedScriptLanguage {
 
 	public JRubyScriptLanguage() {
 		super("jruby");
-	}
-
-	@Override
-	public ScriptEngine getScriptEngine() {
-		// TODO: Consider adapting the wrapped ScriptEngineFactory's ScriptEngine.
-		return new JRubyScriptEngine();
 	}
 
 }

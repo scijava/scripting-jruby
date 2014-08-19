@@ -43,7 +43,6 @@ import javax.script.ScriptException;
 
 import org.junit.Test;
 import org.scijava.Context;
-import org.scijava.plugins.scripting.jruby.JRubyScriptEngine;
 import org.scijava.script.ScriptLanguage;
 import org.scijava.script.ScriptModule;
 import org.scijava.script.ScriptService;
@@ -63,10 +62,8 @@ public class JRubyTest {
 		final ScriptService scriptService = context.getService(ScriptService.class);
 		final String script = "$x = 1 + 2;";
 		final ScriptModule m = scriptService.run("add.rb", script, true).get();
-		final ScriptEngine engine = (ScriptEngine) m.getReturnValue();
-		final Object result = engine.get("$x");
-		// NB: Result is of type org.jruby.RubyFixnum.
-		assertEquals("3", result.toString());
+		final Object result = m.getReturnValue();
+		assertEquals(3L, result);
 	}
 
 	@Test
@@ -76,14 +73,15 @@ public class JRubyTest {
 
 		final ScriptLanguage language = scriptService.getLanguageByExtension("rb");
 		final ScriptEngine engine = language.getScriptEngine();
-		assertEquals(JRubyScriptEngine.class, engine.getClass());
-		engine.put("$hello", 17);
-		assertEquals("17", engine.eval("$hello").toString());
-		assertEquals("17", engine.get("$hello").toString());
+		final String engineClassName = engine.getClass().getName();
+		assertEquals("org.jruby.embed.jsr223.JRubyEngine", engineClassName);
+		engine.put("hello", 17);
+		assertEquals("17", engine.eval("hello").toString());
+		assertEquals("17", engine.get("hello").toString());
 
 		final Bindings bindings = engine.getBindings(ScriptContext.ENGINE_SCOPE);
 		bindings.clear();
-		assertEquals("", engine.get("$hello").toString());
+		assertEquals("", engine.get("hello").toString());
 	}
 
 	// FIXME: This test currently fails due to input injection failure.
