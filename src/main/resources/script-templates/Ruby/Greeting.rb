@@ -6,4 +6,4 @@
 # the 'name' parameter from the user, and then display
 # the 'greeting' output parameter, based on its type.
 
-greeting = "Hello, " + name + "!"
+$greeting = "Hello, " + $name + "!"
