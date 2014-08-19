@@ -36,8 +36,6 @@ import static org.junit.Assert.assertEquals;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
-import javax.script.Bindings;
-import javax.script.ScriptContext;
 import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 
@@ -76,16 +74,11 @@ public class JRubyTest {
 		final String engineClassName = engine.getClass().getName();
 		assertEquals("org.jruby.embed.jsr223.JRubyEngine", engineClassName);
 		engine.put("hello", 17);
-		assertEquals("17", engine.eval("hello").toString());
-		assertEquals("17", engine.get("hello").toString());
-
-		final Bindings bindings = engine.getBindings(ScriptContext.ENGINE_SCOPE);
-		bindings.clear();
-		assertEquals("", engine.get("hello").toString());
+		assertEquals(17L, engine.eval("$hello"));
+		assertEquals(17, engine.get("hello"));
 	}
 
-	// FIXME: This test currently fails due to input injection failure.
-//	@Test
+	@Test
 	public void testParameters() throws InterruptedException, ExecutionException,
 		IOException, ScriptException
 	{
@@ -95,12 +88,12 @@ public class JRubyTest {
 		final String script = "" + //
 			"# @ScriptService ss\n" + //
 			"# @OUTPUT String language\n" + //
-			"language = ss.getLanguageByName(\"Ruby\").getLanguageName\n";
+			"$language = $ss.getLanguageByName(\"ruby\").getLanguageName\n";
 		final ScriptModule m = scriptService.run("hello.rb", script, true).get();
 
 		final Object actual = m.getOutput("language");
 		final String expected =
-			scriptService.getLanguageByName("Ruby").getLanguageName();
+			scriptService.getLanguageByName("ruby").getLanguageName();
 		assertEquals(expected, actual);
 
 		final Object result = m.getReturnValue();
