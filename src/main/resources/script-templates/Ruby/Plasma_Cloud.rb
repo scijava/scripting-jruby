@@ -7,7 +7,7 @@ h = 600
 
 # Create an ImagePlus
 cp = ColorProcessor.new(w, h)
-i = ij.ImagePlus.new "Plasma Cloud", cp
+i = ImagePlus.new "Plasma Cloud", cp
 
 # Set Image's pixels
 pixels = cp.getPixels;
