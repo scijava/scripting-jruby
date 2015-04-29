@@ -1,3 +1,5 @@
+![](http://jenkins.imagej.net/job/scripting-JRuby/lastBuild/badge/icon)
+
 # JRuby Scripting
 
 This library provides a
