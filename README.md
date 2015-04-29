@@ -1,4 +1,4 @@
-![](http://jenkins.imagej.net/job/scripting-JRuby/lastBuild/badge/icon)
+[![](http://jenkins.imagej.net/job/scripting-JRuby/lastBuild/badge/icon)](http://jenkins.imagej.net/job/scripting-JRuby/)
 
 # JRuby Scripting
 
