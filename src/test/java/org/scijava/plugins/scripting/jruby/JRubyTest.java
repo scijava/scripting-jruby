@@ -41,6 +41,7 @@ import javax.script.ScriptException;
 
 import org.junit.Test;
 import org.scijava.Context;
+import org.scijava.script.AbstractScriptLanguageTest;
 import org.scijava.script.ScriptLanguage;
 import org.scijava.script.ScriptModule;
 import org.scijava.script.ScriptService;
@@ -50,7 +51,12 @@ import org.scijava.script.ScriptService;
  * 
  * @author Johannes Schindelin
  */
-public class JRubyTest {
+public class JRubyTest extends AbstractScriptLanguageTest {
+
+	@Test
+	public void testDiscovery() {
+		assertDiscovered(JRubyScriptLanguage.class);
+	}
 
 	@Test
 	public void testBasic() throws InterruptedException, ExecutionException,
