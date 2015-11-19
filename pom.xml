@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>scripting-jruby</artifactId>
-	<version>0.2.3-SNAPSHOT</version>
+	<version>0.2.4-SNAPSHOT</version>
 
 	<name>SciJava Scripting: JRuby</name>
 	<description>JSR-223-compliant JRuby scripting language plugin.</description>
