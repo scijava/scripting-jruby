@@ -1,4 +1,4 @@
-[![](http://jenkins.imagej.net/job/scripting-JRuby/lastBuild/badge/icon)](http://jenkins.imagej.net/job/scripting-JRuby/)
+[![](https://travis-ci.org/scijava/scripting-jruby.svg?branch=master)](https://travis-ci.org/scijava/scripting-jruby)
 
 # JRuby Scripting
 
