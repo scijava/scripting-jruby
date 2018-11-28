@@ -92,6 +92,10 @@ Institute of Molecular Cell Biology and Genetics.</license.copyrightOwners>
 
 		<!-- NB: Deploy releases to the ImageJ Maven repository. -->
 		<releaseProfiles>deploy-to-imagej</releaseProfiles>
+
+		<jruby.version>1.7.12</jruby.version>
+		<jruby-core.version>${jruby.version}</jruby-core.version>
+		<jruby-stdlib.version>${jruby.version}</jruby-stdlib.version>
 	</properties>
 
 	<dependencies>
@@ -105,12 +109,12 @@ Institute of Molecular Cell Biology and Genetics.</license.copyrightOwners>
 		<dependency>
 			<groupId>org.jruby</groupId>
 			<artifactId>jruby-core</artifactId>
-			<version>1.7.12</version>
+			<version>${jruby-core.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jruby</groupId>
 			<artifactId>jruby-stdlib</artifactId>
-			<version>1.7.12</version>
+			<version>${jruby-stdlib.version}</version>
 		</dependency>
 
 		<!-- Test dependencies -->
