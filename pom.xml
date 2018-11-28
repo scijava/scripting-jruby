@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.scijava</groupId>
 		<artifactId>pom-scijava</artifactId>
-		<version>17.1.1</version>
+		<version>23.2.0</version>
 		<relativePath />
 	</parent>
 
@@ -93,7 +93,7 @@ Institute of Molecular Cell Biology and Genetics.</license.copyrightOwners>
 		<!-- NB: Deploy releases to the ImageJ Maven repository. -->
 		<releaseProfiles>deploy-to-imagej</releaseProfiles>
 
-		<jruby.version>1.7.12</jruby.version>
+		<jruby.version>9.1.17.0</jruby.version>
 		<jruby-core.version>${jruby.version}</jruby-core.version>
 		<jruby-stdlib.version>${jruby.version}</jruby-stdlib.version>
 	</properties>

@@ -75,7 +75,7 @@ public class JRubyTest {
 		assertEquals("org.jruby.embed.jsr223.JRubyEngine", engineClassName);
 		engine.put("hello", 17);
 		assertEquals(17L, engine.eval("$hello"));
-		assertEquals(17, engine.get("hello"));
+		assertEquals(17L, engine.get("hello"));
 	}
 
 	@Test
