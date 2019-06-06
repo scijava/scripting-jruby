@@ -1,4 +1,4 @@
-# @ImagePlus i
+#@ ImagePlus i
 # A basic script that inverts the current image.
 # NB: this requires that an image is already open.
 # The ImagePlus is populated automatically via the
